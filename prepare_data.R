@@ -80,7 +80,7 @@ dat = dat %>%
     EDUC == 6 ~ 'High School Degree', 
     EDUC == 7 ~ 'Some College', 
     EDUC == 8 ~ 'Two-Year Degree',
-    TRUE ~ 'BA+'
+    !is.na(EDUC) ~ 'BA+'
   ), levels = c('Less than High School','High School Degree','Some College', 'Two-Year Degree', 'BA+')),
   RACE_RECODE = factor(case_when(
     RACE == 1 ~ 'White',
