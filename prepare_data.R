@@ -123,7 +123,7 @@ dat = dat %>%
          AGE_AT_IMMIGRATION < 16,
          YRIMMIG <= 2007,
          HS_DEGREE | (VETSTAT == 2)) %>%
-  mutate(ELIGIBLE = 1*(AGE_IN_JUNE_2012 <= 30)) %>%
+  mutate(ELIGIBLE = 1*(AGE_IN_JUNE_2012 < 31)) %>%
   var_labels(FT = 'Works full-time.',
              AFTER = 'After the year 2012 when DACA is implemented.',
              AGE_IN_JUNE_2012 = 'Age in the quarter when DACA was implemented.',
